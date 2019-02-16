@@ -1,0 +1,77 @@
+<style>
+
+	body { 
+  background: url("https://images.all-free-download.com/images/graphiclarge/rippled_wall_background_01_hd_pictures_169887.jpg") 
+  no-repeat;
+  background-size: 100%;
+
+	}
+
+	h1 {
+
+	background-color: white;
+	margin: 10px;
+	width: 100%
+	padding-top: 50px;
+	padding-bottom 50px;
+
+	 opacity: 0.7;
+}
+
+	ol {
+	background-color: white;
+	margin: 10px;
+	width: 100%
+	padding-top: 50px;
+	padding-bottom 50px;
+
+	 opacity: 0.7;
+	}
+
+	h2 {
+	background-color: white;
+	margin: 10px;
+	width: 100%
+	padding-top: 50px;
+	padding-bottom 50px;
+	text-align: center;
+	opacity: 0.7;
+	}
+
+	h3 {
+	background-color: white;
+	margin: 10px;
+	width: 100%
+	padding-top: 50px;
+	padding-bottom 50px;
+	text-align: center;
+	 opacity: 0.7;
+	}
+
+	.crystals {
+	background-color: white;
+	margin: 10px;
+	width: 100%
+	padding-top: 50px;
+	padding-bottom 50px;
+	opacity: 0.7;
+	text-align: center;
+	}
+
+	.gemImage {
+	height: 60px;
+	margin: 10px;
+	}
+	.blue{
+	color: #3092c7;
+	}
+		.green{
+	color: #00aa59;
+	}
+	.red{
+	color: #ec4b5f;
+	}
+	.yellow{
+	color: #FFD700;
+	}
+</style>
