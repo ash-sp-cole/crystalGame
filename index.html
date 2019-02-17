@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+	
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<style>
+
+	body { 
+  background: url("https://images.all-free-download.com/images/graphiclarge/rippled_wall_background_01_hd_pictures_169887.jpg") 
+  no-repeat;
+  background-size: 100%;
+
+	}
+
+	h1 {
+
+	background-color: white;
+	margin: 10px;
+	width: 100%
+	padding-top: 50px;
+	padding-bottom 50px;
+
+	 opacity: 0.7;
+}
+
+	ol {
+	background-color: white;
+	margin: 10px;
+	width: 100%
+	padding-top: 50px;
+	padding-bottom 50px;
+
+	 opacity: 0.7;
+	}
+
+	h2 {
+	background-color: white;
+	margin: 10px;
+	width: 100%
+	padding-top: 50px;
+	padding-bottom 50px;
+	text-align: center;
+	opacity: 0.7;
+	}
+
+	h3 {
+	background-color: white;
+	margin: 10px;
+	width: 100%
+	padding-top: 50px;
+	padding-bottom 50px;
+	text-align: center;
+	 opacity: 0.7;
+	}
+
+	.crystals {
+	background-color: white;
+	margin: 10px;
+	width: 100%
+	padding-top: 50px;
+	padding-bottom 50px;
+	opacity: 0.7;
+	text-align: center;
+	}
+
+	.gemImage {
+	height: 60px;
+	margin: 10px;
+	}
+	.blue{
+	color: #3092c7;
+	}
+		.green{
+	color: #00aa59;
+	}
+	.red{
+	color: #ec4b5f;
+	}
+	.yellow{
+	color: #FFD700;
+	}
+</style>
+</head>
+
+<body>
+
+<center>
+
+		<div class="header">
+			<h1> Welcome to Crystal Collector </h1>
+		</div>
+</center>
+
+		<div class="instructions">
+			<ol>
+				<li>You will be given a random number at the start of the game, this is the number to reach! </li>
+				<li>There are four kinds of crystal: <li>
+				<ul>
+					<ul class="blue"> Blue </ul>
+					<ul class="green"> Green </ul>
+					<ul class="red"> Red </ul>
+					<ul class="yellow"> Yellow </ul>
+				</ul>
+				<li>By clicking on a crystal, you will add a specific value to your point score. (crystal value changes each new game)</li>
+				<li>You WIN the game by MATCHING your score with the score to reach! </li>
+				<li>You LOSE the game if your score goes OVER the value </li>
+				<li>The value of each crystal is hidden </li>
+		</div>		
+		<div class="numberReach">
+				<h2> Number to Reach : <span id="randomNumber"></span>
+				</h2>
+		</div>
+
+		<div class="winLoss">
+				<h2> Wins : <span id="numberWins"></span>
+				<br>
+				Losses : <span id="numberLosses"></span>
+				</h2>
+		</div>
+
+		<div class="crystals">
+				<img src="assets/images/blue.png" class=gemImage id="one" alt="Blue Gem">
+				<img src="assets/images/green.png" class=gemImage id="two" alt="Green Gem">
+				<img src="assets/images/red.png" class=gemImage id= "three" alt="Red Gem">
+				<img src="assets/images/yellow.png" class=gemImage id= "four" alt="Yellow Gem">	
+		</div>
+
+
+		<div class="totalScore">
+			<h3> Your total score is: <span id="totalFinal"></span>
+		</div>
+
+
+
+
+
+<script>
+$( document ).ready(function(){
+  var Random=Math.floor(Math.random()*101+19)
+
+  $('#randomNumber').text(Random);
+  
+ 
+  var num1= Math.floor(Math.random()*11+1)
+  var num2= Math.floor(Math.random()*11+1)
+  var num3= Math.floor(Math.random()*11+1)
+  var num4= Math.floor(Math.random()*11+1)
+
+  var totalScore= 0; 
+  var Wins= 0;
+  var Losses = 0;
+
+$('#numberWins').text(Wins);
+$('#numberLosses').text(Losses);
+
+function reset(){
+      Random=Math.floor(Math.random()*101+19);
+      
+      $('#randomNumber').text(Random);
+      num1= Math.floor(Math.random()*11+1);
+      num2= Math.floor(Math.random()*11+1);
+      num3= Math.floor(Math.random()*11+1);
+      num4= Math.floor(Math.random()*11+1);
+     
+	  totalScore= 0;
+	
+      $('#totalFinal').text(totalScore);
+      } 
+
+function yay(){
+alert("You won!");
+  Wins++; 
+  $('#numberWins').text(Wins);
+  reset();
+}
+
+function loser(){
+alert ("You lose!");
+  Losses++;
+  $('#numberLosses').text(Losses);
+ reset();
+}
+
+  $('#one').on ('click', function(){
+    totalScore = totalScore + num1;
+    console.log("New totalScore= " + totalScore);
+    $('#totalFinal').text(totalScore); 
+          //sets win/lose conditions
+        if (totalScore == Random){
+          yay();
+        }
+        else if ( totalScore > Random){
+          loser();
+        }   
+  })  
+  $('#two').on ('click', function(){
+    totalScore = totalScore + num2;
+    console.log("New totalScore= " + totalScore);
+    $('#totalFinal').text(totalScore); 
+ 
+        if (totalScore == Random){
+          yay();
+        }
+        else if ( totalScore > Random){
+          loser();
+        }   
+  })  
+   $('#three').on ('click', function(){
+    totalScore = totalScore + num3;
+    console.log("New totalScore= " + totalScore);
+    $('#totalFinal').text(totalScore); 
+
+        if (totalScore == Random){
+          yay();
+        }
+        else if ( totalScore > Random){
+          loser();
+        }   
+  })  
+  $('#four').on ('click', function(){
+    totalScore = totalScore + num4;
+    console.log("New totalScore= " + totalScore);
+    $('#totalFinal').text(totalScore); 
+      
+          if (totalScore == Random){
+          yay();
+        }
+        else if ( totalScore > Random){
+          loser();
+        }
+  });   
+}); 
+
+</script>
+</body>
+</html>
